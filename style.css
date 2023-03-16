@@ -5,9 +5,9 @@ body{
 }
 
 /* ----------title ------------*/
-#title{
+.level-title{
     color: #ec1588;
-    padding-top: 3%;
+    padding-top: 10%;
     font-size: 2rem;
 }
 
