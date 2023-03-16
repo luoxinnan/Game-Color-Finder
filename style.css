@@ -4,6 +4,10 @@ body{
     font-family: 'Luckiest Guy', cursive;
 }
 
+.game-over{
+    background-color:#394A6D ;
+}
+
 /* ----------title ------------*/
 .level-title{
     color: #ec1588;
