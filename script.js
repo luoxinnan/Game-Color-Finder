@@ -1,4 +1,7 @@
-var mainColor = ["#007965", "#F58634", "#FFCC29", "#0F4C75", "#FF7B54", "#4ECCA3"];
+// , "#FFD495", "#FF7B54", "#4ECCA3", "#FFD1D1", "#AAC4FF", "#F2D7D9", "#6D8B74", "#BCEAD5", "#CEE5D0"
+var mainColor = ["#D7E9B9", "#FFFBAC", "#FFCC29"];
+var distinguishColor = ["#B4C19F","#F7F06D", "#EDE322" ]
+var colorIndex = 0;
 var correctColor = "red";
 var correctButton = "";
 var userChosenButton = "";
@@ -29,19 +32,25 @@ $(".btn").click(function() {
 function nextColor() {
     level++;
     $(".level-title").text("Level " + level);
-    var randomNumber = Math.floor(Math.random() * 6);
-    var randomChosenColor = mainColor[randomNumber];
-    $(".btn").css("background-color", randomChosenColor);
+    var chosenColor = mainColor[colorIndex];
+    var correctColor = distinguishColor[colorIndex];
+    $(".btn").css("background-color", chosenColor);
     correctButton = Math.floor(Math.random() * 36 + 1);
     $("#" + correctButton).css("background-color", correctColor);
+    colorIndex ++;
   }
 
 function checkAnswer(){
     if(userChosenButton == correctButton){
       playSound("button-correct");
-      setTimeout(function () {
-        nextColor();
-      }, 1000);
+      if(colorIndex < mainColor.length){
+        setTimeout(function () {
+          nextColor();
+        }, 1000);
+      } else{
+        youWon();
+      }
+
     }else {
         playSound("button-wrong");
         $("body").addClass("game-over");
@@ -71,4 +80,16 @@ function startOver() {
   level = 0;
   started = false;
   $(".btn").css("background-color", "#121212")
+  colorIndex = 0;
+}
+
+function youWon(){
+   playSound("win");
+  $(".score").text("Congratulations!");
+  $(".level-title").text("You Win!!");
+  setTimeout(function(){
+    $(".score").text("");
+    $(".level-title").text("Press a key to start the game");
+  }, 3000);
+  startOver()
 }
