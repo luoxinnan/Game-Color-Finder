@@ -17,8 +17,8 @@ $(document).on("keydown", function(){
 // find user chosen color, log it to users choice, and animate it.
 $(".btn").click(function() {
     userChosenButton = $(this).attr("id");
-    // play sound
-    // animate button
+    playSound("button-correct");
+    animateClick(userChosenButton);
     checkAnswer();
   });
 
@@ -36,7 +36,7 @@ function nextColor() {
 
 function checkAnswer(){
     if(userChosenButton == correctButton){
-        alert("right");
+        // alert("right");
     }else {
         // play sound
         $("body").addClass("game-over");
@@ -50,5 +50,16 @@ function checkAnswer(){
       }
 }
 
+function animateClick(buttonId){
+  $("#" + buttonId).addClass("clicked");
+  setTimeout(function(){
+    $("#" + buttonId).removeClass("clicked");
+  }, 200);
+}
+
+function playSound(soundName) {
+  var audio = new Audio("sounds/" + soundName + ".mp3");
+  audio.play();
+}
 
 

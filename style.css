@@ -38,3 +38,8 @@ body{
     border: 3px solid #4e2448;
     border-radius: 10%;
   }
+
+.clicked{
+    box-shadow: 0 0 10px white;
+    background-color: rgb(255, 255, 255);
+}
