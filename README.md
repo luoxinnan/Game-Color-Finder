@@ -2,7 +2,7 @@
 <h2>Live demo</h2>
 <p>https://luoxinnan.github.io/Game-find-different-color/</p>
 <h2>Introduction</h2>
-<p>This is a game of finding a different color created using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>jQuery</strong>.</p>
+<p>This is a game of finding a different color created using <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong>, and <strong>jQuery</strong>.This is an original work written from scratch, as a testament or a milestone to completing a self-learning stage in mastering jQuery and combining JS and jQuery. </p>
 <p>This game is only for computers, not available on the phone.</p>
 <p>(17-03-2023)</p>
 <h2>Features</h2>
