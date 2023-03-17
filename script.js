@@ -16,10 +16,13 @@ $(document).on("keydown", function(){
 
 // find user chosen color, log it to users choice, and animate it.
 $(".btn").click(function() {
+  if(started){
     userChosenButton = $(this).attr("id");
-    playSound("button-correct");
+    
     animateClick(userChosenButton);
     checkAnswer();
+  }
+
   });
 
 function nextColor() {
@@ -30,23 +33,21 @@ function nextColor() {
     $(".btn").css("background-color", randomChosenColor);
     correctButton = Math.floor(Math.random() * 36);
     $("#" + correctButton).css("background-color", correctColor);
-    
-    // playSound
   }
 
 function checkAnswer(){
     if(userChosenButton == correctButton){
-        // alert("right");
+      playSound("button-correct");
     }else {
-        // play sound
+        playSound("button-wrong");
         $("body").addClass("game-over");
-        $("#level-title").text("Game Over, Press a Key to Restart");
+        $(".level-title").text("Game Over, Press a Key to Restart");
         // display the level and record.
         setTimeout(function () {
           $("body").removeClass("game-over");
         }, 200);
   
-        // start over
+        startOver();
       }
 }
 
@@ -62,4 +63,8 @@ function playSound(soundName) {
   audio.play();
 }
 
-
+function startOver() {
+  level = 0;
+  started = false;
+  $(".btn").css("background-color", "#121212")
+}
