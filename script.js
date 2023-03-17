@@ -8,9 +8,10 @@ var level = 0;
 var started = false;
 $(document).on("keydown", function(){
   if(!started){
-    $("h1").text("Level " + level);
+    $(".level-title").text("Level " + level);
     nextColor();
     started  = true;
+    $(".score").text("");
   }
 });
 
@@ -31,7 +32,7 @@ function nextColor() {
     var randomNumber = Math.floor(Math.random() * 6);
     var randomChosenColor = mainColor[randomNumber];
     $(".btn").css("background-color", randomChosenColor);
-    correctButton = Math.floor(Math.random() * 36);
+    correctButton = Math.floor(Math.random() * 36 + 1);
     $("#" + correctButton).css("background-color", correctColor);
   }
 
@@ -44,8 +45,8 @@ function checkAnswer(){
     }else {
         playSound("button-wrong");
         $("body").addClass("game-over");
-        $(".level-title").text("Game Over, Press a Key to Restart");
-        // display the level and record.
+        $(".score").text("Game Over, Your score: " +( level-1));
+        $(".level-title").text("Press a Key to Restart");
         setTimeout(function () {
           $("body").removeClass("game-over");
         }, 200);

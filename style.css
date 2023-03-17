@@ -11,8 +11,14 @@ body{
 /* ----------title ------------*/
 .level-title{
     color: #ec1588;
-    padding-top: 10%;
+
     font-size: 2rem;
+}
+
+.score{
+    color: #ec1588;
+    padding-top: 10%;
+    font-size: 1.5rem;
 }
 
 .crown-img{
