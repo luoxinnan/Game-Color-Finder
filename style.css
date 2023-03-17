@@ -2,6 +2,9 @@ body{
     background-color: #121212;
     text-align: center;
     font-family: 'Luckiest Guy', cursive;
+    background-image:url(/images/bg-down.png);
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 
 .game-over{
@@ -34,10 +37,11 @@ body{
 }
 /* -------------game interface-------- */
 #game-interface{
-    margin: 10%;
+    margin: 5%;
 }
 
 .btn {
+    background-color: #121212;
     display: inline-block;
     height: 40px;
     width: 40px;
