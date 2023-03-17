@@ -38,6 +38,9 @@ function nextColor() {
 function checkAnswer(){
     if(userChosenButton == correctButton){
       playSound("button-correct");
+      setTimeout(function () {
+        nextColor();
+      }, 1000);
     }else {
         playSound("button-wrong");
         $("body").addClass("game-over");
