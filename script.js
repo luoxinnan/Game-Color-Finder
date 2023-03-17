@@ -1,6 +1,5 @@
-// , "#FFD495", "#FF7B54", "#4ECCA3", "#FFD1D1", "#AAC4FF", "#F2D7D9", "#6D8B74", "#BCEAD5", "#CEE5D0"
-var mainColor = ["#D7E9B9", "#FFFBAC", "#FFCC29"];
-var distinguishColor = ["#B4C19F","#F7F06D", "#EDE322" ]
+var mainColor = ["#FF7B54", "#FFD495", "#4ECCA3", "#D7E9B9", "#FFFBAC", "#FFCC29", "#FFD1D1", "#AAC4FF"];
+var distinguishColor = ["#9D4930", "#F7A52E", "#26916E", "#B4C19F","#F7F06D", "#EDE322", "#FFE2E2", "#BDD1FE" ];
 var colorIndex = 0;
 var correctColor = "red";
 var correctButton = "";
